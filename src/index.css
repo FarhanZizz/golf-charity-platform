@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-forest: #0a1f0f;
+    --color-forest-light: #122b18;
+    --color-forest-mid: #1a3d22;
+    --color-gold: #d4af37;
+    --color-gold-light: #e8cc6a;
+    --color-cream: #faf7f0;
+    --color-cream-dark: #f0ead8;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "DM Sans", sans-serif;
+    background-color: var(--color-forest);
+    color: var(--color-cream);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: "DM Serif Display", serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-gold text-forest font-semibold rounded-xl
+           hover:bg-gold-light transition-all duration-200 active:scale-95 shadow-lg shadow-gold/20;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-6 py-3 border border-white/20 text-cream font-medium
+           rounded-xl hover:border-white/40 hover:bg-white/5 transition-all duration-200 active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2 text-cream/70 font-medium rounded-lg
+           hover:text-cream hover:bg-white/5 transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-forest-light border border-white/10 rounded-2xl;
+  }
+
+  .card-hover {
+    @apply card hover:border-white/20 hover:bg-forest-mid transition-all duration-200 cursor-pointer;
+  }
+
+  .input {
+    @apply w-full px-4 py-3 bg-white/5 border border-white/15 rounded-xl text-cream placeholder-cream/30
+           transition-all duration-200;
+  }
+
+  .input:focus {
+    @apply outline-none border-gold/60 bg-white/10;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-cream/60 mb-1.5;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium;
+  }
+
+  .badge-green {
+    @apply badge bg-brand-500/15 text-brand-400 border border-brand-500/20;
+  }
+
+  .badge-gold {
+    @apply badge bg-gold/15 text-gold border border-gold/20;
+  }
+
+  .badge-red {
+    @apply badge bg-red-500/15 text-red-400 border border-red-500/20;
+  }
+
+  .badge-gray {
+    @apply badge bg-white/5 text-cream/50 border border-white/10;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-display leading-tight;
+  }
+
+  .nav-link {
+    @apply text-cream/60 hover:text-cream transition-colors duration-200 text-sm font-medium;
+  }
+
+  .stat-card {
+    @apply card p-6 flex flex-col gap-2;
+  }
+
+  .divider {
+    @apply border-t border-white/10;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Noise texture overlay */
+.noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Score ball component */
+.score-ball {
+  @apply w-12 h-12 rounded-full flex items-center justify-center font-mono font-bold text-lg border-2;
+}
+
+/* Animated gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #d4af37 0%, #86efac 50%, #d4af37 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s linear infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Page transitions */
+.page-enter {
+  animation: fadeUp 0.4s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
