@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {
-  Trophy, Heart, Zap, ArrowRight, Check, Star,
+  Trophy, Heart, Zap, ArrowRight, Check,
   Users, DollarSign, Award, ChevronDown
 } from "lucide-react";
 import Navbar from "../components/layout/Navbar";

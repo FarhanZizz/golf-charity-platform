@@ -22,9 +22,9 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-3 mt-5">
               {[Twitter, Instagram, Mail].map((Icon, i) => (
-                <a key={i} href="#" className="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center text-cream/40 hover:text-cream transition-all">
+                <button key={i} className="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center text-cream/40 hover:text-cream transition-all">
                   <Icon size={14} />
-                </a>
+                </button>
               ))}
             </div>
           </div>
@@ -53,7 +53,7 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {["Privacy Policy", "Terms of Service", "Cookie Policy", "Responsible Play"].map((l) => (
                 <li key={l}>
-                  <a href="#" className="text-cream/50 hover:text-cream text-sm transition-colors">{l}</a>
+                  <span className="text-cream/50 text-sm cursor-default">{l}</span>
                 </li>
               ))}
             </ul>

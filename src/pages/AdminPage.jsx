@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import {
   Users, Trophy, Heart, Award, BarChart2,
-  Play, Eye, CheckCircle, XCircle, Plus, Trash2,
+  Play, Eye, CheckCircle, Plus, Trash2,
   RefreshCw, Settings, DollarSign
 } from "lucide-react";
 import Navbar from "../components/layout/Navbar";
 import { supabase } from "../lib/supabase";
 import { useAllDraws } from "../hooks/useDraws";
 import {
-  formatCurrency, formatDate, generateRandomDraw,
+  formatCurrency, generateRandomDraw,
   generateAlgorithmicDraw, calculateMatches, getPrizeTier,
   calculatePools, PLAN_PRICES
 } from "../lib/utils";

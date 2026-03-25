@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Trophy, Calendar, Users, ChevronDown, ChevronUp } from "lucide-react";
+import { Trophy, Calendar, ChevronDown, ChevronUp } from "lucide-react";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import { useDraws } from "../hooks/useDraws";

@@ -144,8 +144,8 @@ export default function RegisterPage() {
 
           <p className="text-cream/30 text-xs text-center leading-relaxed">
             By creating an account you agree to our{" "}
-            <a href="#" className="text-cream/50 hover:text-cream underline">Terms</a> and{" "}
-            <a href="#" className="text-cream/50 hover:text-cream underline">Privacy Policy</a>.
+            <span className="text-cream/50 underline cursor-default">Terms</span> and{" "}
+            <span className="text-cream/50 underline cursor-default">Privacy Policy</span>.
           </p>
         </form>
 
